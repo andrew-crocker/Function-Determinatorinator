@@ -72,8 +72,8 @@ def function_check(domain, codomain):
 				if codomain[index] == codomain[subindex]:
 					domain.remove(domain[index])
 					codomain.remove(codomain[index])
-					index = -1;
-					subindex = 0;
+					index = -1
+					subindex = 0
 					break
 				else:
 					return 0
