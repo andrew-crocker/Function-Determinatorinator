@@ -47,17 +47,13 @@ def get_input():
 			if location[0] != "y" and location[0] != "n":
 				second_prompt = 1
 				location = input("Try again.. input from file? [Y/N]: ").lower()
-				# print("here1")
 			else:
-				# print("here2")
 				break
 		except IndexError:
 			if not second_prompt:
 				location = input("Are the function pairs stored in a file? [Yes/No]: ").lower()
-				# print("here3")
 			else:
 				location = input("Try again.. input from file? [Y/N]: ").lower()
-				# print("here4")
 	
 	if location[0] == "y":
 		FuncList = from_file()
@@ -114,7 +110,7 @@ def print_result(OneToOne, Onto, Function):
 		else:
 			print("Not one-to-one.")
 		if Onto:
-			print("Onto!")
+			print("Onto not currently implemented.")
 		else:
 			print("Not onto.")
 
