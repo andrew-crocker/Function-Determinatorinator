@@ -17,14 +17,14 @@ def from_file():
 			break
 		except FileNotFoundError:
 			print("Looks like that file doesn't exist. Please try again.")
-	text_string = "".join(infile.readlines())
+	text_string = "".join(infile.readlines()).lower()
 	function = multisplit(text_string, "\n\t|'\".,/?><;:[]{}-_=+()!@#$%^&*`~ abcdefghijklmnopqrstuvwxyz")
 	return function
 
 def from_user():
 	data = ""
 	while True:
-		data2 = input("Type a function pair and press Enter. (Blank line to quit): ")
+		data2 = input("Type a function pair and press Enter. (Blank line to quit): ").lower()
 		if data2 == "":
 			break
 		data = data + " " + data2
@@ -110,7 +110,8 @@ def print_result(OneToOne, Onto, Function):
 		else:
 			print("Not one-to-one.")
 		if Onto:
-			print("Onto not currently implemented.")
+			print();
+			# print("Onto not currently implemented.")
 		else:
 			print("Not onto.")
 
