@@ -144,10 +144,9 @@ def get_range():
 
 def process_input(domain, codomain, Range):
 	if function_check(domain, codomain):
-		if Range:
+		Onto = -1
+		if Range != -1:
 			Onto = is_Onto(Range, codomain)
-		else:
-			Onto = -1
 		OneToOne = is_OneToOne(codomain)
 		return OneToOne, Onto, 1
 	else:
@@ -162,7 +161,7 @@ def print_result(OneToOne, Onto, Function):
 			print("One-to-one!")
 		else:
 			print("Not one-to-one.")
-		if Onto:
+		if Onto == 1:
 			print("Onto!")
 		elif Onto == 0:
 			print("Not onto.")
@@ -170,7 +169,7 @@ def print_result(OneToOne, Onto, Function):
 def main():
 	print_instructions()
 	checkOnto = ask_onto()
-	Range = 0
+	Range = -1
 	if checkOnto:
 		Range = get_range()
 	domain, codomain = get_input()
